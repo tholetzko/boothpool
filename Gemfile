@@ -6,13 +6,13 @@ git_source(:github) do |repo_name|
 end
 
 gem 'devise'
-gem "starter_generators", :git => "https://github.com/raghubetina/starter_generators"
+gem 'starter_generators', :git => 'https://github.com/raghubetina/starter_generators'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", :group => :development
-gem "pg", :group => :production
-gem "rails_12factor", :group => :production
+gem 'sqlite3', :group => :development
+gem 'pg', :group => :production
+gem 'rails_12factor', :group => :production
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
