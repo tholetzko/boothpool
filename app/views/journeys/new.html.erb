@@ -69,7 +69,7 @@
           Organizer
         </label>
 
-        <input type="text" id="organizer_id" name="organizer_id" placeholder="Organizer" class="form-control" value="<%= @journey.organizer_id %>">
+        <input type="text" id="organizer_id" name="organizer_id" placeholder="<%= current_user.email %>" class="form-control" value="<%= current_user.id %>">
       </div>
 
       <button class="btn btn-success">
