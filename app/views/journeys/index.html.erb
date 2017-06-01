@@ -12,6 +12,8 @@
         <th>Origin</th>
         <th>Destination</th>
         <th>Capacity</th>
+        <th>Remaining Capacity</th>
+
         <th>Date</th>
         <th>Price</th>
         <th>Organizer</th>
@@ -23,6 +25,8 @@
         <td><%= journey.origin %></td>
         <td><%= journey.destination %></td>
         <td><%= journey.capacity %></td>
+        <td><%= journey.seats.count %></td>
+
         <td><%= journey.date %></td>
         <td><%= journey.price %></td>
         <td><%= journey.organizer.try(:email) %></td>
@@ -32,7 +36,32 @@
           <a href="/journeys/<%= journey.id %>" class="btn btn-primary">Show</a>
           <a href="/journeys/<%= journey.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_journey/<%= journey.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+
+          <div class="btn-group btn-group-justified">
+
+            <form action="/create_seat" method="post">
+              <!-- Hidden input for authenticity token to protect from forgery -->
+              <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+              <!-- Label and input for journey_id -->
+              <div class="form-group">
+                <input type="hidden" id="journey_id" name="journey_id" placeholder="Journey" class="form-control" value="<%= journey.id %>">
+              </div>
+
+              <!-- Label and input for user_id -->
+              <div class="form-group">
+                <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
+              </div>
+
+              <button class="btn btn-success">
+                Seat
+              </button>
+
+            </form>
+          </div>
+
         </td>
+
       </tr>
       <% end %>
     </table>
