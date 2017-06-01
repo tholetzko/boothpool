@@ -12,6 +12,7 @@
         <th>Origin</th>
         <th>Destination</th>
         <th>Capacity</th>
+        <th> Remaining capacity</th>
         <th>Date</th>
         <th>Price</th>
         <th>Organizer</th>
@@ -23,6 +24,7 @@
         <td><%= journey.origin %></td>
         <td><%= journey.destination %></td>
         <td><%= journey.capacity %></td>
+        <td><%= Seat.where(:journey_id => journey.id) %></td>
         <td><%= journey.date %></td>
         <td><%= journey.price %></td>
         <td><%= journey.organizer.try(:email) %></td>

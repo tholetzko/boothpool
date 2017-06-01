@@ -69,7 +69,7 @@ class JourneysController < ApplicationController
     if URI(request.referer).path == "/journeys/#{@journey.id}"
       redirect_to("/", :notice => "Journey deleted.")
     else
-      redirect_to(:back, :notice => "Journey deleted.")
+      redirect_to("/", :notice => "Journey deleted.")
     end
   end
 end

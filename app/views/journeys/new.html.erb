@@ -1,11 +1,11 @@
 <!-- Validation failure messages -->
 <% if @journey.errors.any? %>
-  <% @journey.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
-  <% end %>
+<% @journey.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
 <% end %>
 
 <div class="page-header">
@@ -45,13 +45,14 @@
         <input type="text" id="capacity" name="capacity" placeholder="Capacity" class="form-control" value="<%= @journey.capacity %>">
       </div>
 
-      <!-- Label and input for date -->
+      <!-- Label and input for date and time -->
       <div class="form-group">
         <label for="date" class="control-label">
-          Date
+          Date and time
         </label>
 
-        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @journey.date %>">
+        <input type="datetime-local" class="form-control" id="date" name="date" value="<%= @journey.date %>" >
+        <!-- <%= DateTime.now.strftime('%m/%d/%Y %H:%M') %> -->
       </div>
 
       <!-- Label and input for price -->
