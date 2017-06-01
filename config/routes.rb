@@ -1,21 +1,4 @@
 Rails.application.routes.draw do
-  # Routes for the Seat resource:
-  # CREATE
-  get "/seats/new", :controller => "seats", :action => "new"
-  post "/create_seat", :controller => "seats", :action => "create"
-
-  # READ
-  get "/seats", :controller => "seats", :action => "index"
-  get "/seats/:id", :controller => "seats", :action => "show"
-
-  # UPDATE
-  get "/seats/:id/edit", :controller => "seats", :action => "edit"
-  post "/update_seat/:id", :controller => "seats", :action => "update"
-
-  # DELETE
-  get "/delete_seat/:id", :controller => "seats", :action => "destroy"
-  #------------------------------
-
   # Routes for the Comment resource:
   # CREATE
   get "/comments/new", :controller => "comments", :action => "new"
